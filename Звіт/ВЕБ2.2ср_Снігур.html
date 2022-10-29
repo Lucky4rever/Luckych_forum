@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/26e3ee569a.js"></script>
+    <title>Document</title>
+
+    <style>
+      .text {
+        text-align: center;
+        outline: 3px double red;
+        outline-offset: 15px;
+        text-decoration: overline;
+        text-indent: 50px;
+        text-transform: capitalize;
+        font: 40px bold italic;
+      }
+      div {
+        border: 3px solid black;
+        padding: 20px;
+      }
+      .static {
+        height: 80px;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+      }
+      span {
+        display: block;
+      }
+      .img2 {
+        float: right;
+        outline: 2px double black;
+        border-radius: 50%;
+        object-position: 20% 100%;
+      }
+      
+      * {
+        box-sizing: border-box;
+      }
+      .clearfix::after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+      .flex-container {
+        display: flex;
+        flex-wrap: nowrap;
+        background-color: DodgerBlue;
+      }
+
+      .flex-container div {
+        background-color: #f1f1f1;
+        width: 100px;
+        margin: 10px;
+        text-align: center;
+        line-height: 75px;
+        font-size: 30px;
+      }
+      @media screen and (max-width: 800px) {
+        body {
+          background-color: rgb(153, 144, 238);
+        }
+      }
+      
+      .box {
+        float: left;
+        padding: 50px;
+      }
+      #box1, #box2, #box3, #box4, #box5, #box6, #box7, #box8 {transition: 1s;}
+      #box1:hover {transform: scale(0.5,0.5);} 
+      #box2:hover {transform: rotate(20deg);}
+      #box3:hover {transform: skew(20deg,10deg);}
+      #box4:hover {transform: matrix(1, -0.3, 0.5, 1, 150, 10);}
+      #box5:hover {transform: rotateY(150deg);} 
+      #box6:hover {transform: rotateZ(90deg);}
+      #box7:hover {-webkit-box-reflect: below;}
+      #box8:hover {-webkit-box-reflect: right;}
+    </style>
+</head>
+<body>
+  <footer clas="static"><h1 class="text">самостійна робота №2.2</h1></footer>
+  
+  <span>A display property with</span> <span>a value of "block" results in</span> <span>a line break between each span elements.</span>
+  <div style="display:inline-block;">A display property with</div> <div style="display:inline-block;">a value of "block" results in</div> <div style="display:inline-block;">a line break between each span elements.</div>
+  <div class="clearfix">
+    <div id="box1" class="box" style="background-color:#bbb">
+    <p>Some text inside the box.</p>
+    </div>
+    <div id="box2" class="box" style="background-color:#ccc">
+    <p>Some text inside the box.</p>
+    </div>
+    <div id="box3" class="box" style="background-color:#ddd">
+    <p>Some text inside the box.</p>
+    </div>
+    <div id="box4" class="box" style="background-color:white">
+    <p>Some text inside the box.</p>
+    </div>
+  </div>
+  <div class="clearfix">
+    <div id="box5" class="box" style="background-color:#bbb">
+    <p>Some text inside the box.</p>
+    </div>
+    <div id="box6" class="box" style="background-color:#ccc">
+    <p>Some text inside the box.</p>
+    </div>
+    <div id="box7" class="box" style="background-color:#ddd">
+    <p>Some text inside the box.</p>
+    </div>
+    <div id="box8" class="box" style="background-color:white">
+    <p>Some text inside the box.</p>
+    </div>
+  </div>
+  
+  <div class="clearfix">
+    <img class="img2" src="https://www.w3schools.com/css/img_5terre_wide.jpg" alt="town" width="170" height="170">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet...
+  </div>
+  <div class="flex-container">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>  
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>  
+    <div>7</div>
+    <div>8</div>
+  </div>
+</body>
+</html>

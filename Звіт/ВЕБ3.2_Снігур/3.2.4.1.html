@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/26e3ee569a.js"></script>
+    <title>Document</title>
+
+    <style>
+      div, tr, table {border: 3px solid black; border-collapse: collapse;}
+      #element1 {background-color: yellow; height: 120px;}
+      #inelement1 {height: 40px; width: 400px;  margin: 30px; float: left; background-color: white; border: 3px solid black;}
+      #element234 {white-space: nowrap;}
+      #element234 tr {width: 300px;}
+      #element2 {background-color: blue;}
+      #element3, #element4 {margin: 60px; -webkit-margin-collapse: collapse;}
+      #element3 {min-width: 700px; background-color: white;}
+      #inelement3 {height: 1200px; margin: 40px; border-color: gray;}
+      #inelement3space {height: 890px;}
+      #ininelement3 {vertical-align: bottom; height: 300px; background-color: red;}
+      #element4 {min-width: 480px;}
+      #inelement4 {background-color: blue; margin: 40px; height: 1200px;}
+      #element5 {background-color: yellow;  height: 100px;}
+      #container {width: 1500px; height: 1500px; box-sizing: border-box;}
+    </style>
+</head>
+<body>
+    <!-- <table id="element1">
+      <tr id="inelement1"></tr>
+    </table>
+    <table id="element234">
+        <tr id="element2"></tr>
+        <tr id="element3">
+            <td><div style="height: 1480px; min-width: 35vw; outline-color: gray; background-color: white;"></div></td>
+        <tr id="element4"></tr>
+    </table>
+    <table id="element5">
+    </table> -->
+    <table id="container">
+      <tr id="element1"><td id="inelement1">1</td><td style="border-left: 0;" colspan="2"></td></tr>
+      <tr id="element234">
+        <td id="element2">2</td>
+        <td id="element3"><div id="inelement3"><div id="inelement3space"></div><div id="ininelement3">3</div></td>
+        <td id="element4"><div id="inelement4">4</div></td>
+      </tr>
+      <tr id="element5"><td style="border-right: 0;" colspan="3">5</td></tr>
+    </table>
+</body>
+</html>
