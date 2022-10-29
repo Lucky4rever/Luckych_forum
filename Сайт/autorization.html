@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <link rel="stylesheet" href="css\general_style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="shortcut icon" href="l-initial-letter-with-joystick-shape-free-vector.ico" type="image/x-icon">
+    <link href="save_to_file.php">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Вхід/реєстрація</title>
+    <style>
+    </style>
+</head>
+<body style="background-image: url('https://cdn.discordapp.com/attachments/798288758830530573/1027248614369673346/autorization_theme.jpg');">
+  <div class="autorizationmenu">
+    <div class = "logreg">
+      <div class = "selected-stylesheet-block" id="LogIn">
+        <h1>Вхід</h1>
+        <div><form action="Header.html">
+          <label for="fname">Логін:</label><br>
+          <input type="text" id="fname" name="fname" placeholder="Логін"><br>
+          <label for="lname">Пароль:</label><br>
+          <input type="password" id="lname" name="lname" placeholder="Пароль"><br>
+          <input type="submit" value="Увійти" class="dropbtn">
+        </form> <br> </div>
+        <div><a href="#Register" class="link"><button  class="button">Зареєструватись</button></a></div>
+      </div>
+
+      
+      <div class = "unselected-stylesheet-block" id="Register">
+        <h1>Вхід</h1>
+        <div><form action="Header.html">
+          <label for="fname">Електронна пошта:</label><br>
+          <input type="text" id="fname" name="fname" placeholder="Електронна пошта"><br>
+          <label for="fname">Логін:</label><br>
+          <input type="text" id="fname" name="fname" placeholder="Логін"><br>
+          <label for="lname">Пароль:</label><br>
+          <input type="password" id="lname" name="lname" placeholder="Пароль"><br>
+          <label for="lname">Повторіть пароль:</label><br>
+          <input type="password" id="lname" name="lname" placeholder="Пароль"><br>
+          <input type="submit" value="Зареєструватись" class="dropbtn">
+        </form> <br> </div>
+        <div><a href="#LogIn" class="link"><button class="button">Увійти</button></a></div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script language="javascript">
+    var i=0;
+    var image=document.getElementById("image");
+    var imgs=new Array("light mode.png","dark mode.png");
+    function imgsrc() {
+        i++;i%=imgs.length;
+        image.src = imgs[i];
+    }
+  $(".link").click(function(){
+    var elementId=$(this).attr('href').substring(1);
+    document.getElementsByClassName("selected-stylesheet-block")[0].classList.replace('selected-stylesheet-block', 'unselected-stylesheet-block');
+    document.getElementById(elementId).classList.replace('unselected-stylesheet-block', 'selected-stylesheet-block');
+  });
+</script>
+</body>
+</html>

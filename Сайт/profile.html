@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <link rel="stylesheet" href="css\general_style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="shortcut icon" href="l-initial-letter-with-joystick-shape-free-vector.ico" type="image/x-icon">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Профіль користувача</title>
+    <script type="text/javascript">
+        setInterval(function () {
+            date = new Date(),
+                h = date.getHours(),
+                m = date.getMinutes(),
+                s = date.getSeconds(),
+                h = (h < 10) ? '0' + h : h,
+                m = (m < 10) ? '0' + m : m,
+                s = (s < 10) ? '0' + s : s,
+                document.getElementById('time').innerHTML = h + ':' + m + ':' + s;
+        }, 1000);
+        $('button').on('click', function () {
+            $('.wrap').toggleClass('day night');
+        });
+    </script>
+</head>
+<body>
+  <footer class="general">
+    <p>
+      <div id="logodiv"><a href="Header.html" target="_parent"><span style="margin-left: 20%;"><img src="https://cdn.discordapp.com/attachments/798288758830530573/1025113314210107463/1664471623984.png" width="110" height="50" alt="Фото"></div></span></a>
+      <a href="C:\Users\Администратор\Documents\Дз\3 семестр\WEB\Звіт\ВЕБ_Снiгур.html" target="_parent"><span style="margin-left: 4%;"><button class="button">Звіт</button></a></span><a href="autorization.html" target="_parent"><button class="button">Увійти/Зареєструватись</button></a><a href="profile.html" target="_parent"><button class="button">Профіль</button></a>
+      <span id="timer">
+        <font size="4" color="red" face="Wingdings">v </font><span id="time">00:00:00</span>
+      </span>
+    </p>
+  </footer>
+      <div class="mode"><img class="btn-toggle" id="image" src="light mode.png" width="80px" height="41px" onClick="imgsrc();"></div>
+
+    <div class = "stylesheet" style="margin: 5% 40% 70px 5%; padding: 0; width: auto;">
+      <img class="back" src="https://cdna.artstation.com/p/assets/images/images/030/291/092/large/harry-sussams-valleyhut.jpg?1600173754"></img>
+      <div class="stylesheet-block">
+        <img class="avatar" src="https://cdna.artstation.com/p/assets/images/images/035/766/930/large/oskar-kuijken-oskark-guillethug1.jpg?1615843669"></img>
+        <h1 style="margin-left: 70px; margin-top: -20px;">@Luckych</h1>
+        <span>Стать: 
+          <form method="post">
+            <label><input type="radio" name="radio" value="male">Чоловік</label>
+            <label><input type="radio" name="radio" value="female">Жінка</label>
+            <label><input type="radio" name="radio" value="special">Особливе</label>
+          </form>
+        </span>
+        <div>
+          <h2>Про себе:</h2>
+          <form name="myform" method="post">
+            <input style="width: 100%;" type="text" name="lname" placeholder="Про себе">  
+            <input type="submit" value="Зберегти">
+          </form>
+        </div>
+      </div>
+    </div>
+        
+
+  <script language="javascript">
+    var commentlock=document.createElement('div');
+    commentlock.className = "stylesheet-block";
+    commentlock.innerHTML = "efsv";
+
+    var i=0;
+    var image=document.getElementById("image");
+    var imgs=new Array("light mode.png","dark mode.png");
+    function imgsrc() {
+        i++;i%=imgs.length;
+        image.src = imgs[i];
+    }
+    
+  const btn = document.querySelector(".btn-toggle");
+  btn.addEventListener("click", function () {
+    document.body.classList.toggle("dark-theme");
+    document.querySelector(".general").classList.toggle('Dark-theme');
+    document.querySelector(".stylesheet").classList.toggle('Dark-theme');
+    document.querySelector("#logodiv").classList.toggle('Dark-theme');
+    document.querySelector("input[type=submit]").classList.toggle('Dark-theme');
+    document.querySelector("input[type=text]").classList.toggle('Dark-theme');
+    var stylesheetblock = $(".stylesheet-block");
+    for(var i=0; i<stylesheetblock.length; i++)
+      stylesheetblock[i].classList.toggle('Dark-theme');
+  });
+
+  
+  $(".link").click(function(){
+    var elementId=$(this).attr('href').substring(1);
+    document.getElementsByClassName("selected-stylesheet-block")[0].classList.replace('selected-stylesheet-block', 'unselected-stylesheet-block');
+    document.getElementById(elementId).classList.replace('unselected-stylesheet-block', 'selected-stylesheet-block');
+    if (elementId!=homepage)
+      $(elementId).append(commentlock);
+  });
+</script>
+</body>
+</html>
