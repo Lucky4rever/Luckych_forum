@@ -322,6 +322,17 @@ table#comments.Dark-theme {
     min-width: 100%;
     vertical-align: middle;
 }
-ul {
-    padding-left: 0;
+#bestfooter {
+    border-top: 3px solid gray;
+    background-color: silver;
+    left: 0;
+    bottom: 0;
+    height: 180px;
+    width: calc (100% + 8px);
+    box-sizing: border-box;
+    margin: -8px;
+}
+#bestfooter.Dark-theme {    
+    background: rgb(46, 36, 36);
+    border-top: 3px solid silver;
 }
