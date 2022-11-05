@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <meta charset="utf-8" />
+  <link rel="stylesheet" href="css/ВЕБ4.2_Снігур.css">
+    
+</head>
+<body>
+    <form name="search">
+        <textarea rows="7" cols="40" name="message"></textarea>
+    </form>
+    <button class="btn bold">Ж</button>
+    <button class="btn italic">К</button>
+    <button class="btn underline">П</button>
+    <button class="btn color2">А</button>
+    <button class="btn register">Р</button>
+    <div id="printBlock"></div>
+
+
+
+
+
+<script>
+var messageBox = document.search.message;
+var printBlock = document.getElementById("printBlock");
+function onkeypress(e){
+  var val = String.fromCharCode(e.keyCode);
+  printBlock.textContent += val;
+}
+function onkeydown(e){
+  if(e.keyCode===8){
+    var length = printBlock.textContent.length;
+    printBlock.textContent = printBlock.textContent.substring(0, length-1);
+  }
+}
+
+messageBox.addEventListener("keypress", onkeypress);
+messageBox.addEventListener("keydown", onkeydown);
+
+var textcolor = 2;
+var register = 1;
+$(".btn").bind('click', function(){
+  if(this.classList.contains('bold')) //напівжирність
+    document.getElementById("printBlock").classList.toggle("bold");
+
+  if(this.classList.contains('italic')) //нахил
+    document.getElementById("printBlock").classList.toggle("italic");
+
+  if(this.classList.contains('underline')) //підкреслювання
+    document.getElementById("printBlock").classList.toggle("underline");
+
+  if(this.classList.contains('color'+textcolor)) { //колір тексту
+    if (textcolor-1==0) printBlock.classList.remove('color'+3);
+    else printBlock.classList.remove('color'+(textcolor-1));
+    printBlock.classList.toggle('color'+textcolor);
+    this.classList.toggle('color'+textcolor);
+    if (textcolor==3)  textcolor=1;
+    else  textcolor++;
+    this.classList.toggle('color'+textcolor);
+  }
+
+  if(this.classList.contains('register')) { //регістр символів
+    switch (register) {
+      case 1: //Малі літери
+        printBlock.textContent = printBlock.textContent.toLowerCase();
+        break;
+      case 2: //Великі літери
+        printBlock.textContent = printBlock.textContent.toUpperCase();
+        break;
+      case 3: //Перша літера слова велика
+        var textforprintBlock = printBlock.textContent[0].toUpperCase();
+        for(var i=0; i<printBlock.textContent.length-1; i++) {
+          if (printBlock.textContent[i]==' ' && printBlock.textContent[i+1]!=' ')
+            textforprintBlock += printBlock.textContent[i+1].toUpperCase();
+          else
+            textforprintBlock += printBlock.textContent[i+1].toLowerCase();
+        }
+        printBlock.textContent=textforprintBlock;
+        break;
+      case 4: //Перша літера речення велика
+        var textforprintBlock = printBlock.textContent[0].toUpperCase();
+        for(var i=1; i<printBlock.textContent.length; i++) {
+          if (printBlock.textContent[i]=='.') {
+            textforprintBlock += '.';
+            for(i=i+1; i<printBlock.textContent.length; i++) {
+              if (printBlock.textContent[i]!=' ') {
+                textforprintBlock += printBlock.textContent[i].toUpperCase();
+                break;
+              }
+              else textforprintBlock += printBlock.textContent[i].toLowerCase();
+            }
+          }
+          else
+            textforprintBlock += printBlock.textContent[i].toLowerCase();
+        }
+        printBlock.textContent=textforprintBlock;
+        break;
+    }
+    if (register==4) register=1;
+    else register++;
+  }
+});
+</script>
+</body>
+</html>
