@@ -190,3 +190,4 @@ article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,su
   min-width: 700px;
   padding: 20px 20px 20px 20px;
 }
+.option img {width: 100%;}
