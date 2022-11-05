@@ -1,0 +1,15 @@
+div, tr, table {border: 3px solid black; border-collapse: collapse;}
+      #element1 {background-color: yellow; height: 10%;}
+      #inelement1 {height: 33%; width: 60%;  margin: 10%; float: left; background-color: white; border: 3px solid black;}
+      #element234 {white-space: nowrap;}
+      #element234 tr {width: 15%;}
+      #element2 {background-color: blue;}
+      #element3, #element4 {margin: 10%; -webkit-margin-collapse: collapse;}
+      #element3 {min-width: 35%; background-color: white;}
+      #inelement3 {height: 90%; margin: 10%; border-color: gray;}
+      #inelement3space {height: 84%;}
+      #ininelement3 {vertical-align: bottom; height: 15%; background-color: red;}
+      #element4 {min-width: 24%;}
+      #inelement4 {background-color: blue; margin: 10%; height: 90%;}
+      #element5 {background-color: yellow;  height: 10%;}
+      #container {width: 90%; height: 1500px; box-sizing: border-box;}
