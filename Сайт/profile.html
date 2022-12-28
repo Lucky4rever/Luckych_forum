@@ -32,55 +32,56 @@
       </span>
     </p>
   </footer>
-      <div class="mode"><img class="btn-toggle" id="image" src="light mode.png" width="80px" height="41px" onClick="imgsrc();"></div>
 
-    <div class = "stylesheet" style="margin: 5% 40% 70px 5%; padding: 0; width: auto;">
-      <img class="back" src="https://cdna.artstation.com/p/assets/images/images/030/291/092/large/harry-sussams-valleyhut.jpg?1600173754"></img>
-      <div class="stylesheet-block">
-        <img class="avatar" src="https://cdna.artstation.com/p/assets/images/images/035/766/930/large/oskar-kuijken-oskark-guillethug1.jpg?1615843669"></img>
-        <h1 style="margin-left: 70px; margin-top: -20px;">@Luckych</h1>
-        <span>Стать: 
-          <form method="post">
-            <label><input type="radio" name="radio" value="male">Чоловік</label>
-            <label><input type="radio" name="radio" value="female">Жінка</label>
-            <label><input type="radio" name="radio" value="special">Особливе</label>
-          </form>
-        </span>
-        <div>
-          <h2>Про себе:</h2>
-          <form name="myform" method="post">
-            <input style="width: 100%;" type="text" name="lname" placeholder="Про себе">  
-            <input type="submit" value="Зберегти">
-          </form>
-        </div>
+  <div class="mode"><img class="btn-toggle" id="image" src="light mode.png" width="80px" height="41px"></div>
+
+  <div id = "stylesheet" style="margin: 5% 40% 70px 5%;">
+    <img class="back" src="https://cdna.artstation.com/p/assets/images/images/030/291/092/large/harry-sussams-valleyhut.jpg?1600173754"></img>
+    <div class="stylesheet-block">
+      <img class="avatar" src="https://cdna.artstation.com/p/assets/images/images/035/766/930/large/oskar-kuijken-oskark-guillethug1.jpg?1615843669"></img>
+      <h1 style="margin-left: 70px; margin-top: -20px;">@Luckych</h1>
+      <span>Стать: 
+        <form method="post">
+          <label><input type="radio" name="radio" value="male">Чоловік</label>
+          <label><input type="radio" name="radio" value="female">Жінка</label>
+          <label><input type="radio" name="radio" value="special">Особливе</label>
+        </form>
+      </span>
+      <div>
+        <h2>Про себе:</h2>
+        <form name="myform" method="post">
+          <input style="width: 100%;" type="text" name="lname" placeholder="Про себе">  
+          <input type="submit" value="Зберегти">
+        </form>
       </div>
     </div>
+  </div>
         
 
   <script language="javascript">
-    var commentlock=document.createElement('div');
-    commentlock.className = "stylesheet-block";
-    commentlock.innerHTML = "efsv";
-
-    var i=0;
-    var image=document.getElementById("image");
-    var imgs=new Array("light mode.png","dark mode.png");
-    function imgsrc() {
-        i++;i%=imgs.length;
-        image.src = imgs[i];
-    }
+  var isDarkMode = false;
+  const dark = "dark mode.png"
+  const light= "light mode.png"
     
-  const btn = document.querySelector(".btn-toggle");
-  btn.addEventListener("click", function () {
+  document.querySelector(".btn-toggle").addEventListener("click", function () {
     document.body.classList.toggle("dark-theme");
     document.querySelector(".general").classList.toggle('Dark-theme');
-    document.querySelector(".stylesheet").classList.toggle('Dark-theme');
+    document.querySelector("#stylesheet").classList.toggle('Dark-theme');
     document.querySelector("#logodiv").classList.toggle('Dark-theme');
     document.querySelector("input[type=submit]").classList.toggle('Dark-theme');
     document.querySelector("input[type=text]").classList.toggle('Dark-theme');
     var stylesheetblock = $(".stylesheet-block");
     for(var i=0; i<stylesheetblock.length; i++)
       stylesheetblock[i].classList.toggle('Dark-theme');
+      
+    if (isDarkMode) {
+      isDarkMode = false
+      document.getElementById("image").src = light
+    }
+    else {
+      isDarkMode = true
+      document.getElementById("image").src = dark
+    }
   });
 
   

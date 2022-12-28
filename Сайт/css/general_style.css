@@ -1,3 +1,7 @@
+#workspace {
+    margin: 5% 15% 70px 5%;
+    height: 100%;
+}
 .general {
     border-top: solid 2px #808080;
     opacity: 0.9;
@@ -138,7 +142,7 @@ body.dark-theme {
     transition: 1s;
   }
 
-.stylesheet {
+#stylesheet {
     border: 3px solid gray;
     background-color: silver;
     z-index: -2;
@@ -146,7 +150,7 @@ body.dark-theme {
     min-height: 300px;
 }
 
-.rightmenu{
+#rightmenu {
     width: auto;
     margin-top: 30px;
     background-color: rgb(219, 203, 203);
@@ -156,7 +160,21 @@ body.dark-theme {
     max-width: 300px;
     position: sticky;
     top: 30px;
- }
+}
+#rightmenu.Dark-theme {
+    background-color: rgb(46, 36, 36);
+}
+#fixedrightmenu {
+    width: auto;
+    margin-top: 30px;
+    background-color:rgb(219, 203, 203);
+    padding: 40px 0 40px 0;
+    top: 30px;
+    outline: 3px solid gray;
+}
+#fixedrightmenu.Dark-theme {
+    background-color: rgb(46, 36, 36);
+}
 #leftblock {
     width: 65%;
     vertical-align: top;
@@ -192,8 +210,8 @@ body.dark-theme {
     background-color: rgb(19, 18, 18);
     transition: 0.3s;
 }
-.stylesheet-block:hover {outline: 2px solid gray;}
-.stylesheet-block.Dark-theme:hover {outline: 2px solid white;}
+#homepage .stylesheet-block:hover {outline: 2px solid gray;}
+#homepage .stylesheet-block.Dark-theme:hover {outline: 2px solid white;}
 .stylesheet-block img {
     max-width: 500px;
     max-height: 500px;
@@ -215,17 +233,17 @@ span, a {text-decoration: none !important;}
 .link {
   font: optional;
 }
-.stylesheet-block:not([enabled]):hover{
-  outline: 0;
-}
 @media screen and (max-width:900px) {
     .general {
         display: none;
     }
-    .rightmenu {
+    #rightmenu {
         display: none;
     }
-    .stylesheet {
+    #fixedrightmenu {
+        display: none;
+    }
+    #stylesheet {
         margin-bottom: 0;
     }
 }
@@ -256,16 +274,23 @@ input[type=submit], .dropbtn {
     background-color: gray;
     margin-top: 10px;
 }
+input[type=submit] {
+    margin-left: 10px;
+    width: 90px;
+}
 .dropbtn:hover {
     background-color: orangered;
 }
 input[type=submit], .dropbtn:focus {
     background-color: red;
 }
+input[type=submit]:hover {
+    background-color: rgb(220, 0, 0);
+}
 input[type=text] {
     border: 0;
     outline: 0;
-    width: 80%;
+    width: calc(100% - 116px);
     padding: 7px 8px;
     background-color: white;
 }
@@ -281,8 +306,12 @@ input[type=text].Dark-theme {
     color: white;
 }
 input[type=submit].Dark-theme {
+    transition: none;
     background-color: rgb(77, 76, 76);
     color: white;
+}
+input[type=submit].Dark-theme:hover {
+    background-color: rgb(51, 51, 51);
 }
 table#comments, table#comments tr, table#comments td {
     border: 3px solid gray;
@@ -322,17 +351,15 @@ table#comments.Dark-theme {
     min-width: 100%;
     vertical-align: middle;
 }
-#bestfooter {
-    border-top: 3px solid gray;
-    background-color: silver;
-    left: 0;
-    bottom: 0;
-    height: 180px;
-    width: calc (100% + 8px);
-    box-sizing: border-box;
-    margin: -8px;
-}
-#bestfooter.Dark-theme {    
+#stylesheet.Dark-theme {    
     background: rgb(46, 36, 36);
     border-top: 3px solid silver;
+}
+.like {
+    width: 35px;
+    transform: translateY(5px);
+}
+.likebox {
+    color: #000000;
+    font-size: 30px;
 }
